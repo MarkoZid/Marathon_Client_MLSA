@@ -32,9 +32,9 @@ jobs:
          npm run build --if-present
 
       - name: Test
-    run: |
-     cd D:\\a\\Marathon_Client_MLSA\\Marathon_Client_MLSA
-     npm run test --if-present
+        run: |
+         cd D:\\a\\Marathon_Client_MLSA\\Marathon_Client_MLSA
+         npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
