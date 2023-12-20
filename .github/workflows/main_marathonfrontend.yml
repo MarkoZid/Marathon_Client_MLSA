@@ -19,22 +19,13 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: '18.x'
 
-      - name: Install dependencies
+      - name: npm install, build, and test
         run: |
-          working-directory: D:/a/Marathon_Client_MLSA/Marathon_Client_MLSA
           npm install
-
-      - name: Build
-        run: |
-         working-directory: D:/a/Marathon_Client_MLSA/Marathon_Client_MLSA
-         npm run build --if-present
-
-      - name: Test
-        run: |
-         working-directory: D:/a/Marathon_Client_MLSA/Marathon_Client_MLSA
-         npm run test --if-present
+          npm run build --if-present
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
