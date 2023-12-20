@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -19,7 +19,22 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: |
+         cd D:\a\Marathon_Client_MLSA\Marathon_Client_MLSA
+         npm install
+
+      - name: Build
+        run: |
+         cd D:\a\Marathon_Client_MLSA\Marathon_Client_MLSA
+         npm run build  # Replace with your build command
+
+      - name: Test
+        run: |
+         cd D:\a\Marathon_Client_MLSA\Marathon_Client_MLSA
+         npm test  # Replace with your test command
 
       - name: npm install, build, and test
         run: |
