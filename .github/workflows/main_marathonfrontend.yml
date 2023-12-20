@@ -23,7 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd ./Marathon_Client_MLSA/Marathon
+          cd ./Marathon/Client/marathon-client
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: Marathon  # Assuming 'Marathon' is the directory containing your Node.js app
+          path: Marathon/Client/marathon-client
 
   deploy:
     runs-on: ubuntu-latest
